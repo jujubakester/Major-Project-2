@@ -4,12 +4,15 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
+import * as Icon from 'react-bootstrap-icons';
+import jujuLogo from '../images/navlogo.png';
 
-function NavScroll() {
+export default function NavScroll() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Link class="navbar-brand" to="/"><img src={jujuLogo} /></Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,9 +20,14 @@ function NavScroll() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
+            
+            <Link to="/shop" class='nav-link text-white'>Shop</Link>
+            <Link to="/cart" class='nav-link text-white'>Cart</Link>
+            <Link to="/about" class='nav-link text-white'>About</Link>
+            <Link to="/register" class='nav-link text-white'>Register</Link>
+            <Link to="/login" class='nav-link text-white'>Login</Link>
+            <Link to="/gifts" class='nav-link text-white'>Gifts</Link>
+            { /* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -28,10 +36,12 @@ function NavScroll() {
               <NavDropdown.Item href="#action5">
                 Something else here
               </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+  </NavDropdown> */ }
+            <Nav.Link href='#' className='text-white'>
+              <Icon.Bag />
+              <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
             </Nav.Link>
+          
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -48,4 +58,3 @@ function NavScroll() {
   );
 }
 
-export default NavScroll;

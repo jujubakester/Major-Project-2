@@ -3,26 +3,37 @@ import {
   MDBCarousel,
   MDBCarouselItem,
 } from 'mdb-react-ui-kit';
+import Ban1 from '../images/ban8.jpg';
+import Ban from '../images/ban00.jpg';
+import Ban2 from '../images/ban2.jpg';
+import Ban3 from '../images/ban13.jpg';
 
-export default function App() {
+
+export default function Mycarousel() {
   return (
-    <MDBCarousel showControls fade>
+    <MDBCarousel className="Homecarousel" showControls fade>
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={1}
-        src='https://mdbootstrap.com/img/new/slides/041.jpg'
+        src={Ban1}
         alt='...'
       />
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={2}
-        src='https://mdbootstrap.com/img/new/slides/042.jpg'
+        src={Ban}
         alt='...'
       />
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={3}
-        src='https://mdbootstrap.com/img/new/slides/043.jpg'
+        src={Ban2}
+        alt='...'
+      />
+      <MDBCarouselItem
+        className='w-100 d-block'
+        itemId={4}
+        src={Ban3}
         alt='...'
       />
     </MDBCarousel>

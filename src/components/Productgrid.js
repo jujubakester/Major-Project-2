@@ -1,11 +1,18 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBRipple } from "mdb-react-ui-kit";
+import img1 from '../images/sam1.jpg';
+import img2 from '../images/sam2.jpg';
+import img3 from '../images/sam4.jpg';
+import img4 from '../images/sam20.jpg';
+import img5 from '../images/sam5.jpg';
+import img6 from '../images/sam6.jpg';
+
 
 function Grid() {
   return (
     <MDBContainer fluid className="my-5 text-center">
       <h4 className="mt-4 mb-5">
-        <strong>Product Listing</strong>
+        
       </h4>
 
       <MDBRow>
@@ -16,7 +23,7 @@ function Grid() {
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(1).webp"
+              src={img1}
               fluid
               className="w-100"
             />
@@ -28,7 +35,7 @@ function Grid() {
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
                     <span className="badge bg-light pt-2 ms-3 mt-3 text-dark">
-                      $123
+                      Bracelet
                     </span>
                   </h5>
                 </div>
@@ -50,7 +57,7 @@ function Grid() {
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(2).webp"
+              src={img2}
               fluid
               className="w-100"
             />
@@ -62,7 +69,7 @@ function Grid() {
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
                     <span className="badge bg-light pt-2 ms-3 mt-3 text-dark">
-                      $239
+                      Rings
                     </span>
                   </h5>
                 </div>
@@ -84,7 +91,7 @@ function Grid() {
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(3).webp"
+              src={img3}
               fluid
               className="w-100"
             />
@@ -96,7 +103,7 @@ function Grid() {
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
                     <span className="badge bg-light pt-2 ms-3 mt-3 text-dark">
-                      $147
+                      Necklace
                     </span>
                   </h5>
                 </div>
@@ -119,7 +126,7 @@ function Grid() {
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"
+              src={img4}
               fluid
               className="w-100"
             />
@@ -131,7 +138,7 @@ function Grid() {
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
                     <span className="badge bg-light pt-2 ms-3 mt-3 text-dark">
-                      $83
+                      Earings
                     </span>
                   </h5>
                 </div>
@@ -153,7 +160,7 @@ function Grid() {
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(5).webp"
+              src={img6}
               fluid
               className="w-100"
             />
@@ -165,7 +172,7 @@ function Grid() {
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
                     <span className="badge bg-light pt-2 ms-3 mt-3 text-dark">
-                      $106
+                      18k Gold
                     </span>
                   </h5>
                 </div>
@@ -187,7 +194,7 @@ function Grid() {
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(6).webp"
+              src={img5}
               fluid
               className="w-100"
             />
@@ -199,7 +206,7 @@ function Grid() {
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
                     <span className="badge bg-light pt-2 ms-3 mt-3 text-dark">
-                      $58
+                      24k Gold
                     </span>
                   </h5>
                 </div>
