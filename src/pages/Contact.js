@@ -29,7 +29,7 @@ export default function Contact (){
                     <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
                         <div className='d-flex justify-content-center align-items-center h-100'>
                             <div className='text-white'>
-                                <h1 className='mb-3'>We'd love to hear from you!</h1>
+                                <h1 className='mb-3 models '>We'd love to hear from you!</h1>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ export default function Contact (){
             <MDBContainer className='text-black my-5 m-auto'>
                 
                 <MDBRow>
-                    <MDBCol className='order-2 order-lg-1'>
+                    <MDBCol className='order-2 order-lg-1 models '>
                         <p>You can reach us with our following contact information below or use our contact form.</p>
                         <p><MDBIcon icon="home" className="me-2" />Tarlac City, PH</p>
                         <p><MDBIcon icon="envelope" className="me-2" /> info@juwelry.com</p>
@@ -50,7 +50,7 @@ export default function Contact (){
                         <p><img src={Mapsamp} style={{display:'block', width:'100%'}} /></p>
                     </MDBCol>
 
-                    <MDBCol className='order-2 order-lg-1'>
+                    <MDBCol className='order-2 order-lg-1 models '>
                         <form id='form' className='text-center'>
                             
                             <MDBInput label='Name' v-model='name' wrapperClass='mb-4' />

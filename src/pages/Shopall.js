@@ -11,8 +11,8 @@ import {
   MDBRipple
 } from "mdb-react-ui-kit";
 
-
 import Shopsidebar from '../components/Shopsidebar';
+
 import E1 from '../images/eee1.jpg';
 import E2 from '../images/eee4.jpg';
 import E3 from '../images/eee5.jpg';
@@ -32,7 +32,7 @@ const divStyle = {
   height: '250px'
 };
 
-let count = 0;
+/*let count = 0;
 let sum = 0;
 let cart = {};
 
@@ -77,9 +77,54 @@ function updateCart() {
   document.getElementById("count").textContent = count;
   localStorage.setItem("sum", sum);
   localStorage.setItem("count", count);
-}
+}*/
 
-export default function Shopall() {
+export default function Shopall({updateCounter}) {
+
+  let count = 0, sum = 0, cart = {};
+
+  if(localStorage.getItem("count")){
+    count = parseInt(localStorage.getItem("count"));
+  }
+  if(localStorage.getItem("sum")){
+    sum = parseInt(localStorage.getItem("sum"));
+  }
+  if(localStorage.getItem("cart")){
+  cart = JSON.parse(localStorage.getItem("cart"));
+  }
+
+  const addToCart = (event) => {
+    
+    updateCounter();
+
+    let price = Number(event.target.dataset.price);
+    let image = event.target.dataset.image;
+    let title = event.target.dataset.prodname;
+    let id = event.target.dataset.id;
+
+    if(id in cart)
+    {
+      cart[id].qty++;
+    } else 
+    {
+        let cartItem = {
+            title: title,
+            image: image,
+            price: price,
+            qty: 1
+        };
+        cart[id] = cartItem
+    }
+
+    count++;
+    sum += price;
+      
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("sum", sum);
+    localStorage.setItem("count", count);
+  }
+
+
   return (
     <React.Fragment>
     
@@ -182,7 +227,7 @@ export default function Shopall() {
                   <p>Earings</p>
                 </a>
                 <h6 className="mb-3">₱6,365</h6>
-                <MDBBtn>Add to Cart</MDBBtn>
+                <MDBBtn data-id="2" data-price='6365' data-prodname="Tree" data-image={E2} onClick={addToCart}>Add to Cart</MDBBtn>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -225,7 +270,7 @@ export default function Shopall() {
                 <h6 className="mb-3">₱8,375</h6>
                 
                 </h6>
-                <MDBBtn>Add to Cart</MDBBtn>
+                <MDBBtn data-id="3" data-price='8375' data-prodname="Butterfly" data-image={E3} onClick={addToCart}>Add to Cart</MDBBtn>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

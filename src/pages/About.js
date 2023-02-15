@@ -52,13 +52,17 @@ import {
       <MDBCard>
         <MDBCardImage src={Mod1} />
         <MDBCardBody>
-          <MDBCardTitle>Card title</MDBCardTitle>
+          <MDBCardTitle>THE BRAND</MDBCardTitle>
           <MDBCardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This
-            content is a little bit longer.
+            Ju.wel.ry designs a variety of beautiful and high quality 18k gold coated and gold jewelry. Ju.wel.ry is style and comfort as you venture through the modern world. Every piece manifesting every single one of today's hustlers; authentic, bold and classy.
+
+            Allow us to accompany in your daily aesthetic ideals—as your share of daily luxury, your confidence in gold. 
+            <br/>
+            <br/>
+            <MDBCardText>Ju.wel.ry  -“It is you who inspire us to strive & exceed standards by curating timeless pieces that sparks the fiery soul.</MDBCardText>
           </MDBCardText>
           <MDBCardText>
-            <small className='text-muted'>Last updated 3 mins ago</small>
+            <small className='text-muted'>Last updated a month ago</small>
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>
@@ -66,12 +70,13 @@ import {
       <MDBCard>
         <MDBCardImage src={Mod2} />
         <MDBCardBody>
-          <MDBCardTitle>Card title</MDBCardTitle>
+          <MDBCardTitle>DESIGN AND CRAFTSMANSHIP</MDBCardTitle>
           <MDBCardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content.
-          </MDBCardText>
-          <MDBCardText>
-            <small className='text-muted'>Last updated 3 mins ago</small>
+              Each piece in our assortment starts with our in-house design team. We’re inspired by sleek, modern sculptural designs and patterns; we celebrate the pop of a gemstone, the subtle sparkle of a diamond; and we’re energized by your personal style. Each design goes through countless versions in partnership with our master jewelers to perfect settings, lengths, chain links, clasps, ring comfort, earring fit—no detail goes unnoticed or undiscussed—until the piece is exactly right.          </MDBCardText>
+              <br/>
+            
+              <MDBCardText>
+            <small className='text-muted'>Last updated a month ago</small>
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>
@@ -79,13 +84,13 @@ import {
       <MDBCard>
         <MDBCardImage src={Mod3} />
         <MDBCardBody>
-          <MDBCardTitle>Card title</MDBCardTitle>
-          <MDBCardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This
-            card has even longer content than the first to show that equal height action.
-          </MDBCardText>
-          <MDBCardText>
-            <small className='text-muted'>Last updated 3 mins ago</small>
+                <MDBCardTitle>SUSTAINABILITY</MDBCardTitle>
+                 <MDBCardText>HOW WE CONSIDER OUR IMPACT<MDBCardText>
+      
+                <MDBCardText>“Fine jewelry for my damn self” is our mantra, but in creating the pieces that you love, it is just as important to us that you feel good about where they come from. Our entire production ecosystem—including sourcing, manufacturing, and branding—aims to mitigate our impact on the environment, support and empower our partners, and give back to our communities. We know how our materials are sourced and processed, and the working conditions that they were made in.
+                   </MDBCardText>
+        </MDBCardText>
+            <small className='text-muted'>Last updated a month ago</small>
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>

@@ -4,19 +4,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import * as Icon from 'react-bootstrap-icons';
 import jujuLogo from '../images/navlogo.png';
 import Modal from 'react-bootstrap/Modal';
 import {
   MDBBtn,
-  MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
   MDBInput,
   MDBIcon,
   MDBCheckbox
@@ -24,14 +21,17 @@ import {
 from 'mdb-react-ui-kit';
 
 
-export default function NavScroll() {
+export default function NavScroll({ctr}) {
 
   const [lgShow, setLgShow] = useState(false); 
   const [loginShow, setLoginShow] = useState(false);
   const [Regshow, setRegShow] = useState(false);
   const [isLoggedIn, setLogInfo] = useState(false);
 
-  var count = 0;
+  let count='';
+  if(localStorage.getItem("count")){
+    count = parseInt(localStorage.getItem("count"));
+  }
 
   return (
 
@@ -64,7 +64,7 @@ export default function NavScroll() {
           
           <Link to='/cart' className='nav-link text-white'>
             <Icon.Bag />
-            <span className="badge bg-dark text-white ms-1 rounded-pill">{count}</span>
+            <span className="badge bg-dark text-white ms-1 rounded-pill">{ count ? count : ctr}</span>
           </Link>
           <Link to='#' className='nav-link text-white' onClick={() => setLgShow(true)}>
             <Icon.Search />

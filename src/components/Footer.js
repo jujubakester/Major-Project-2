@@ -80,9 +80,9 @@ export default function Foot() {
           </div>
 
           <div>
-            <a href='' className='me-4 text-reset'>
+            <Link to='https://www.facebook.com/profile.php?id=100090300850106' target='_blank' className='me-4 text-reset'>
               <MDBIcon fab icon="facebook-f" />
-            </a>
+            </Link>
             <a href='' className='me-4 text-reset'>
               <MDBIcon fab icon="twitter" />
             </a>
