@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   MDBContainer,
   MDBRow,
@@ -32,28 +32,70 @@ const divStyle = {
   height: '250px'
 };
 
+let count = 0;
+let sum = 0;
+let cart = {};
 
-export default function gifts() {
+if (localStorage.getItem("count")) {
+  count = parseInt(localStorage.getItem("count"));
+}
+if (localStorage.getItem("sum")) {
+  sum = parseInt(localStorage.getItem("sum"));
+}
+if (localStorage.getItem("cart")) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
+
+function addToCart(event){
+  
+  let price = Number(event.target.dataset.price);
+  let image = event.target.dataset.image;
+  let title = event.target.dataset.prodname;
+  let id = event.target.dataset.id;
+
+  if (id in cart) {
+    cart[id].qty++;
+  } else {
+      let cartItem = {
+          title: title,
+          image: image,
+          price: price,
+          qty: 1
+      };
+      cart[id] = cartItem
+  }
+    count++;
+    sum += price;
+    //console.log(cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+
+function updateCart() {
+  document.getElementById("sum").textContent = sum;
+  document.getElementById("count").textContent = count;
+  localStorage.setItem("sum", sum);
+  localStorage.setItem("count", count);
+}
+
+export default function Shopall() {
   return (
-    <>
+    <React.Fragment>
     
     <header style={{ paddingLeft: 0 }}>
-      <div
-        className='p-5 text-center bg-image'
-        style={divStyle}
-      >
+      <div className='p-5 text-center bg-image' style={divStyle}>
         <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
-          <div className='d-flex justify-content-center align-items-center h-100'>
-            <div className='text-white'>
-              <h1 className='mb-3'>Iconic. Trendy. Wear with style</h1>
-              <h1 className='mb-3'>Free shipping nationwide</h1>
-            </div>
+          <div className='d-flex justify-content-center align-items-center h-100 '>
+            <div className='text-white myiconic'>
+              <h1 className='mb-3 fst-italic'>Iconic. Trendy. Wear it with style.</h1>
+             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <MDBContainer className='text-center text-md-start mt-5'>
+    <MDBContainer className='text-center text-md-start mt-5 mycart'>
     
       <MDBRow>
         <MDBCol md='2'>
@@ -100,7 +142,7 @@ export default function gifts() {
                   <p>Earings</p>
                 </a>
                 <h6 className="mb-3">₱4,690</h6>
-                <MDBBtn>Add to Cart</MDBBtn>
+                <MDBBtn data-id="1" data-price='4690' data-prodname="Heart" data-image={E1} onClick={addToCart}>Add to Cart</MDBBtn>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -557,6 +599,6 @@ className="bg-image rounded hover-zoom"
         </MDBCol>
       </MDBRow>
       </MDBContainer>
-      </>
+      </React.Fragment>
   );
 }

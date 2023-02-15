@@ -52,3 +52,18 @@ code {
     list-style: none;
     padding-left:0;
   }
+
+  .Herofont, .mycart, .footerfont, .mynavbar, .myaccount, .myabout, .mysidebar, .mycart  {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .myiconic {
+    font-family: monospace;
+  }
+
+  .models img{
+    height:400px;
+  }
+  .models {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }

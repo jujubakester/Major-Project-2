@@ -7,14 +7,14 @@ import Feature from '../components/Feature';
 
 export default function Myhomepage (){
     return (
-    <>
-      <Mycarousel />
-      <MDBContainer fluid className="container-lg text-center">
-        <Grid />
-      </MDBContainer>
-      <HeroImage />
-      <Feature />
-    </>
+      <React.Fragment>
+        <Mycarousel />
+        <MDBContainer fluid className="container-lg text-center">
+          <Grid />
+        </MDBContainer>
+        <HeroImage />
+        <Feature />
+      </React.Fragment>
     );
 }
 

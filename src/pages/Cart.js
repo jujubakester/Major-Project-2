@@ -19,7 +19,7 @@ import {
     
     export default function Cart() {
     return ( 
-    <section className="h-100 gradient-custom">
+    <section className="h-100">
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center my-4">
           <MDBCol md="8">

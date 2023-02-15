@@ -5,38 +5,52 @@ import {
     MDBCardBody,
     MDBCardTitle,
     MDBCardText,
-    MDBCardGroup
+    MDBCardGroup,
+    MDBContainer
   } from 'mdb-react-ui-kit';
+  import { Link } from 'react-router-dom';
+  
 
+  import Myabout from '../images/ban8.jpg';
+  import Mod1 from '../images/model1.jpg';
+  import Mod2 from '../images/sam9.jpg';
+  import Mod3 from '../images/sam4.jpg';
 
-const About = () => {
+  const divStyle = {
+    backgroundImage: 'url(' + Myabout + ')',
+    height: '250px'
+  };
+
+  export default function About(){
     return (
         <header style={{ paddingLeft: 0 }}>
         <div
-          className='p-5 text-center bg-image'
-          style={{ backgroundImage: "url('https://mdbootstrap.com/img/new/slides/041.webp')", height: 400 }}
+        className='p-5 text-center bg-image'
+        style={divStyle}
         >
-          <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+                 <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
             <div className='d-flex justify-content-center align-items-center h-100'>
-              <div className='text-white'>
-                <h1 className='mb-3'>WOMEN EMPOWERMENT</h1>
-                <h4 className='mb-3'>Subheading</h4>
-                <a className='btn btn-outline-light btn-lg' href='#!' role='button'>
-                  Call to action
-                </a>
+              <div className='text-white myiconic'>
+                <h1 className='mb-3 fst-italic text-danger'>25% off</h1>
+                <h4 className='mb-3'>Love Month Sale. Sitewide!!</h4>
+                <Link className='btn btn-outline-light btn-lg' to='/shop' role='button'>
+                  Shop now!
+                </Link>
               </div>
             </div>
           </div>
         </div>
         
+        <MDBContainer className='my-5 text-dark myiconic '>
+        <p className="text-center fs-2">Our Mission</p>
+
+        <p className="text-center fs-1">REDEFINE LUXURY, YOUR WAY.</p>
         
-        <p className="text-center">The goal of the Fund is to make an impact by providing the next generation with the tools to rise to leadership on their own terms.</p>
-        <p className="text-center">Since 2020, we’ve partnered with various corporate giving partners to provide women and non-binary people with broader financial and educational resources to empower themselves and their future. As of this year, over $324,000 USD has been committed to Empowerment Fund initiatives outlined below. In addition, $100,000 USD has been committed to separate corporate giving initiatives.</p>
-         
+        </MDBContainer>
        
-        <MDBCardGroup>
+        <MDBCardGroup className="my-5 text-dark models">
       <MDBCard>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/city/041.webp' alt='...' position='top' />
+        <MDBCardImage src={Mod1} />
         <MDBCardBody>
           <MDBCardTitle>Card title</MDBCardTitle>
           <MDBCardText>
@@ -50,7 +64,7 @@ const About = () => {
       </MDBCard>
 
       <MDBCard>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/city/042.webp' alt='...' position='top' />
+        <MDBCardImage src={Mod2} />
         <MDBCardBody>
           <MDBCardTitle>Card title</MDBCardTitle>
           <MDBCardText>
@@ -63,7 +77,7 @@ const About = () => {
       </MDBCard>
 
       <MDBCard>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/city/043.webp' alt='...' position='top' />
+        <MDBCardImage src={Mod3} />
         <MDBCardBody>
           <MDBCardTitle>Card title</MDBCardTitle>
           <MDBCardText>
@@ -86,4 +100,3 @@ const About = () => {
     );
 }
 
-export default About;

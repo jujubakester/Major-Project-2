@@ -12,12 +12,21 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import loginbg from '../images/sam0.jpg';
+
+const divStyle = {
+  backgroundImage: 'url(' + loginbg + ')',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize:'cover',
+  borderRadius: '5px',
+  height: '600px'
+};
 
 function Login() {
   return (
     <MDBContainer fluid>
 
-      <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
+      <MDBCard className='text-black m-5' style={divStyle}>
         <MDBCardBody>
           <MDBRow>
             <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
@@ -39,7 +48,7 @@ function Login() {
             </MDBCol>
 
             <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
-              <MDBCardImage src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp' fluid/>
+              {/* <MDBCardImage src={loginbg} fluid/> */ }
             </MDBCol>
 
           </MDBRow>
