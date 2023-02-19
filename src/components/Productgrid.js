@@ -17,7 +17,7 @@ export default function Grid() {
         <MDBCol md="12" lg="4" className="mb-4">
           <MDBRipple rippleColor="dark" rippleTag="div" className="bg-image rounded hover-zoom shadow-1-strong">
             <img src={img1} className="fluid w-100"/>
-            <a href="/shop/bracelet">
+            <a href="/shop">
               <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }} >
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
@@ -35,7 +35,7 @@ export default function Grid() {
         <MDBCol md="6" lg="4" className="mb-4">
           <MDBRipple rippleColor="dark" rippleTag="div" className="bg-image rounded hover-zoom shadow-1-strong">
             <img src={img2} className="fluid w-100"/>
-            <a href="/shop/rings">
+            <a href="/shop">
               <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
@@ -53,7 +53,7 @@ export default function Grid() {
         <MDBCol md="6" lg="4" className="mb-4">
           <MDBRipple rippleColor="dark" rippleTag="div" className="bg-image rounded hover-zoom shadow-1-strong">
             <img src={img3} className="fluid w-100" />
-            <a href="/shop/necklace">
+            <a href="/shop">
               <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
@@ -73,7 +73,7 @@ export default function Grid() {
         <MDBCol md="12" lg="4" className="mb-4">
           <MDBRipple rippleColor="dark" rippleTag="div" className="bg-image rounded hover-zoom shadow-1-strong">
             <img src={img4} className="fluid w-100" />
-            <a href="/shop/earings">
+            <a href="/shop">
               <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
@@ -91,7 +91,7 @@ export default function Grid() {
         <MDBCol md="6" lg="4" className="mb-4">
           <MDBRipple rippleColor="dark" rippleTag="div" className="bg-image rounded hover-zoom shadow-1-strong">
             <img src={img6} className="fluid w-100"/>
-            <a href="/shop/18k">
+            <a href="/shop">
               <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
@@ -109,7 +109,7 @@ export default function Grid() {
         <MDBCol md="6" lg="4" className="mb-4">
           <MDBRipple rippleColor="dark" rippleTag="div" className="bg-image rounded hover-zoom shadow-1-strong">
             <img src={img5} className="fluid w-100"/>
-            <a href="/shop/24k">
+            <a href="/shop">
               <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
                 <div className="d-flex justify-content-start align-items-start h-100">
                   <h5>
