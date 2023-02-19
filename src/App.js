@@ -14,6 +14,7 @@ import Shopall from './pages/Shopall';
 import Gifts from './pages/Gifts';
 import Contact from './pages/Contact';
 import Account from './pages/Account';
+import CartCheckout from "./pages/Checkout";
 
 export default function App(){
 
@@ -32,6 +33,7 @@ export default function App(){
             <Route path='/gifts' element={ <Gifts/> } />
             <Route path='/contact' element={ <Contact/> } />
             <Route path='/my-account' element={ <Account/> } />
+            <Route path='/checkout' element={ <CartCheckout/> } /> 
             <Route path='*' element={ <Navigate to = '/' /> } />
         </Routes>
         <Foot />

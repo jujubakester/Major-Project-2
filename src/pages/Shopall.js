@@ -32,54 +32,19 @@ const divStyle = {
   height: '250px'
 };
 
-/*let count = 0;
-let sum = 0;
-let cart = {};
-
-if (localStorage.getItem("count")) {
-  count = parseInt(localStorage.getItem("count"));
-}
-if (localStorage.getItem("sum")) {
-  sum = parseInt(localStorage.getItem("sum"));
-}
-if (localStorage.getItem("cart")) {
-  cart = JSON.parse(localStorage.getItem("cart"));
-}
-
-function addToCart(event){
-  
-  let price = Number(event.target.dataset.price);
-  let image = event.target.dataset.image;
-  let title = event.target.dataset.prodname;
-  let id = event.target.dataset.id;
-
-  if (id in cart) {
-    cart[id].qty++;
-  } else {
-      let cartItem = {
-          title: title,
-          image: image,
-          price: price,
-          qty: 1
-      };
-      cart[id] = cartItem
-  }
-    count++;
-    sum += price;
-    //console.log(cart);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
-}
-
-
-function updateCart() {
-  document.getElementById("sum").textContent = sum;
-  document.getElementById("count").textContent = count;
-  localStorage.setItem("sum", sum);
-  localStorage.setItem("count", count);
-}*/
 
 export default function Shopall({updateCounter}) {
+
+  const categoryClicked = (e) => {
+
+    e.preventDefault();
+    const targetCatWrap = '.shop-'+e.target.name;
+    document.querySelectorAll('#shopwrap div.row > div').forEach(el => {el.style.display="block"});
+
+    if(e.target.name != 'all'){
+      document.querySelectorAll("#shopwrap div.row > div:not("+targetCatWrap+")").forEach(el => {el.style.display="none"});
+    }
+  }
 
   let count = 0, sum = 0, cart = {};
 
@@ -144,14 +109,14 @@ export default function Shopall({updateCounter}) {
     
       <MDBRow>
         <MDBCol md='2'>
-          <Shopsidebar/>
+          <Shopsidebar categoryClicked={categoryClicked}/>
         </MDBCol>
         <MDBCol md='10'>
           
-        <MDBContainer fluid className="text-center shopwrap">
+        <MDBContainer fluid id="shopwrap" className="text-center shopwrap">
 
         <MDBRow>
-          <MDBCol md="12" lg="4" className="mb-4">
+          <MDBCol md="12" lg="4" className="mb-4 shop-earrings">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -191,7 +156,7 @@ export default function Shopall({updateCounter}) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 shop-earrings">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -231,7 +196,7 @@ export default function Shopall({updateCounter}) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 shop-earrings">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -274,7 +239,7 @@ export default function Shopall({updateCounter}) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="12" lg="4" className="mb-4">
+          <MDBCol md="12" lg="4" className="mb-4 shop-bracelet">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -314,7 +279,7 @@ export default function Shopall({updateCounter}) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 shop-bracelet">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -355,7 +320,7 @@ export default function Shopall({updateCounter}) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 shop-bracelet">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -395,7 +360,7 @@ export default function Shopall({updateCounter}) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="12" lg="4" className="mb-4">
+          <MDBCol md="12" lg="4" className="mb-4 shop-necklace">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -435,7 +400,7 @@ export default function Shopall({updateCounter}) {
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-      <MDBCol md="12" lg="4" className="mb-4">
+      <MDBCol md="12" lg="4" className="mb-4 shop-necklace">
         <MDBCard>
           <MDBRipple
             rippleColor="light"
@@ -475,7 +440,7 @@ export default function Shopall({updateCounter}) {
       </MDBCardBody>
     </MDBCard>
   </MDBCol>
-  <MDBCol md="12" lg="4" className="mb-4">
+  <MDBCol md="12" lg="4" className="mb-4 shop-necklace">
     <MDBCard>
       <MDBRipple
         rippleColor="light"
@@ -515,7 +480,7 @@ export default function Shopall({updateCounter}) {
   </MDBCardBody>
 </MDBCard>
 </MDBCol>
-<MDBCol md="12" lg="4" className="mb-4">
+<MDBCol md="12" lg="4" className="mb-4 shop-rings">
 <MDBCard>
   <MDBRipple
     rippleColor="light"
@@ -555,7 +520,7 @@ export default function Shopall({updateCounter}) {
 </MDBCardBody>
 </MDBCard>
 </MDBCol>
-<MDBCol md="12" lg="4" className="mb-4">
+<MDBCol md="12" lg="4" className="mb-4 shop-rings">
 <MDBCard>
 <MDBRipple
 rippleColor="light"
@@ -595,7 +560,7 @@ className="w-100"
 </MDBCardBody>
 </MDBCard>
 </MDBCol>
-<MDBCol md="12" lg="4" className="mb-4">
+<MDBCol md="12" lg="4" className="mb-4 shop-rings">
 <MDBCard>
 <MDBRipple
 rippleColor="light"

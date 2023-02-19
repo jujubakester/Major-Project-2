@@ -16,8 +16,36 @@ import {
     MDBTooltip,
     MDBTypography,
     } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
+
+  const updateCart = (e) => {
+
+    let targetValue = e.target.value;
+    let targetOldVal = e.target.dataset.oldval;
+    let targetId = e.target.id;
+    let targetPrice = parseInt(e.target.dataset.price);
+    let currentSubPrice = parseInt(document.getElementById('s-price-'+targetId).innerHTML);
+    let newPrice = '';
+    let prod_sum = parseInt(document.getElementById('product_sum').innerHTML);
+    let grand_total = parseInt(document.getElementById('grand_total').innerHTML);
+
+    if (targetValue > targetOldVal) {
+      newPrice = currentSubPrice + targetPrice;
+      prod_sum = prod_sum + targetPrice;
+      grand_total = grand_total + targetPrice;
+    } else {
+      newPrice = currentSubPrice - targetPrice;
+      prod_sum = prod_sum - targetPrice;
+      grand_total = grand_total - targetPrice;
+    }
+
+    e.target.dataset.oldval = targetValue;
+    document.getElementById('s-price-'+e.target.id).innerHTML = newPrice;
+    document.getElementById('product_sum').innerHTML = prod_sum;
+    document.getElementById('grand_total').innerHTML = grand_total;
+  }
 
   let count=0, sum=0, cartItems='';
   if(localStorage.getItem("count")){
@@ -66,32 +94,32 @@ console.log(arr_cartItems);
                         <p>
                           <strong>{item.title}</strong>
                         </p>
+                        <p>
+                          ₱{item.price}
+                        </p>
                         
                         <MDBTooltip wrapperProps={{ size: "sm" }} wrapperClass="me-1 mb-2"
                           title="Remove item">
                           <MDBIcon fas icon="trash" />
                         </MDBTooltip>
         
-                        <MDBTooltip wrapperProps={{ size: "sm" , color: "danger" }} wrapperClass="me-1 mb-2"
+                        {/* <MDBTooltip wrapperProps={{ size: "sm" , color: "danger" }} wrapperClass="me-1 mb-2"
                           title="Move to the wish list">
                           <MDBIcon fas icon="heart" />
-                        </MDBTooltip>
+                  </MDBTooltip> */}
                       </MDBCol>
                       <MDBCol lg="4" md="6" className="mb-4 mb-lg-0">
                         <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                          <MDBBtn className="px-3 me-2">
-                            <MDBIcon fas icon="minus" />
-                          </MDBBtn>
+                          
+                          <MDBInput onChange={updateCart} data-oldval={item.qty} data-price={item.price} id={item.title} defaultValue={item.qty} min={0} type="number" label="Quantity" />
         
-                          <MDBInput defaultValue={item.qty} min={0} type="number" label="Quantity" />
-        
-                          <MDBBtn className="px-3 ms-2">
-                            <MDBIcon fas icon="plus" />
-                          </MDBBtn>
                         </div>
         
                         <p className="text-start text-md-center">
-                          <strong>₱{item.price * item.qty}</strong>
+                          <strong>
+                            <span>₱</span>
+                            <span id={'s-price-'+item.title}>{item.price * item.qty}</span>
+                          </strong>
                         </p>
                       </MDBCol>
                     </MDBRow>
@@ -143,11 +171,14 @@ console.log(arr_cartItems);
                       <MDBListGroupItem
                         className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                         Products
-                        <span>₱{sum}</span>
+                        <span>
+                          <span>₱</span>
+                          <span id="product_sum">{sum}</span>
+                        </span>
                       </MDBListGroupItem>
-                      <MDBListGroupItem className="d-flex justify-content-between align-items-center px-0">
+                      <MDBListGroupItem className="d-flex justify-content-between align-items-center border-0 px-0">
                         Shipping
-                        <span>Gratis</span>
+                        <span>Free</span>
                       </MDBListGroupItem>
                       <MDBListGroupItem
                         className="d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -158,14 +189,17 @@ console.log(arr_cartItems);
                           </strong>*/}
                         </div>
                         <span>
-                          <strong>₱{sum}</strong>
+                          <strong>
+                            <span>₱</span>
+                            <span id="grand_total">{sum}</span>
+                          </strong>
                         </span>
                       </MDBListGroupItem>
                     </MDBListGroup>
         
-                    <MDBBtn block size="lg">
+                    <Link to='/checkout' className="btn btn-primary btn-lg">
                       Go to checkout
-                    </MDBBtn>
+                    </Link>
                   </MDBCardBody>
                 </MDBCard>
               </MDBCol>

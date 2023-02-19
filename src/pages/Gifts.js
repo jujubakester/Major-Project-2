@@ -34,6 +34,17 @@ const divStyle = {
 };
 
 export default function Gifts() {
+
+  const giftCatClicked = (e) => {
+    e.preventDefault();
+    const targetCatWrap = '.'+e.target.name;
+    document.querySelectorAll('#shopwrap div.row > div').forEach(el => {el.style.display="block"});
+
+    if(e.target.name != 'all'){
+      document.querySelectorAll("#shopwrap div.row > div:not("+targetCatWrap+")").forEach(el => {el.style.display="none"});
+    }
+  }
+
   return (
     <React.Fragment>
     <header style={{ paddingLeft: 0 }}>
@@ -57,14 +68,14 @@ export default function Gifts() {
     
       <MDBRow>
         <MDBCol md='2'>
-          <Giftsidebar/>
+          <Giftsidebar giftCatClicked={giftCatClicked} />
         </MDBCol>
         <MDBCol md='10'>
           
-        <MDBContainer fluid className="text-center shopwrap">
+        <MDBContainer fluid id="shopwrap" className="text-center shopwrap">
 
         <MDBRow>
-          <MDBCol md="12" lg="4" className="mb-4">
+          <MDBCol md="12" lg="4" className="mb-4 gift-for-her gift-21k">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -104,7 +115,7 @@ export default function Gifts() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 gift-for-her gift-21k">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -144,7 +155,7 @@ export default function Gifts() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 gift-for-her gift-21k">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -187,7 +198,7 @@ export default function Gifts() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="12" lg="4" className="mb-4">
+          <MDBCol md="12" lg="4" className="mb-4 gift-for-her gift-bundled">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -227,7 +238,7 @@ export default function Gifts() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 gift-for-her gift-bundled">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -268,7 +279,7 @@ export default function Gifts() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
+          <MDBCol md="6" lg="4" className="mb-4 gift-for-her gift-bundled">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -308,7 +319,7 @@ export default function Gifts() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="12" lg="4" className="mb-4">
+          <MDBCol md="12" lg="4" className="mb-4 gift-diamond">
             <MDBCard>
               <MDBRipple
                 rippleColor="light"
@@ -345,7 +356,7 @@ export default function Gifts() {
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-      <MDBCol md="12" lg="4" className="mb-4">
+      <MDBCol md="12" lg="4" className="mb-4 gift-diamond">
         <MDBCard>
           <MDBRipple
             rippleColor="light"
@@ -382,7 +393,7 @@ export default function Gifts() {
       </MDBCardBody>
     </MDBCard>
   </MDBCol>
-  <MDBCol md="12" lg="4" className="mb-4">
+  <MDBCol md="12" lg="4" className="mb-4 gift-diamond">
     <MDBCard>
       <MDBRipple
         rippleColor="light"
@@ -419,7 +430,7 @@ export default function Gifts() {
   </MDBCardBody>
 </MDBCard>
 </MDBCol>
-<MDBCol md="12" lg="4" className="mb-4">
+<MDBCol md="12" lg="4" className="mb-4 gift-for-him gift-18k">
 <MDBCard>
   <MDBRipple
     rippleColor="light"
@@ -459,7 +470,7 @@ export default function Gifts() {
 </MDBCardBody>
 </MDBCard>
 </MDBCol>
-<MDBCol md="12" lg="4" className="mb-4">
+<MDBCol md="12" lg="4" className="mb-4 gift-for-him gift-18k">
 <MDBCard>
 <MDBRipple
 rippleColor="light"
@@ -499,7 +510,7 @@ className="w-100"
 </MDBCardBody>
 </MDBCard>
 </MDBCol>
-<MDBCol md="12" lg="4" className="mb-4">
+<MDBCol md="12" lg="4" className="mb-4 gift-for-him gift-18k">
 <MDBCard>
 <MDBRipple
 rippleColor="light"
